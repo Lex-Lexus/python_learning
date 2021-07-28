@@ -4,13 +4,18 @@ import random
 # обьявление функций
 def main(num):
     while True:
-        attempt = int(input('Введите число от 1 до 100: '))
-        if attempt > num:
-            print('Слишком много, попробуйте еще раз')
-        elif attempt < num:
-            print('Слишком мало, попробуйте еще раз')
+        attempt = input('Введите число от 1 до 100: ')
+        if attempt.isdigit():
+            attempt = int(attempt)
+            if attempt > num:
+                print('Слишком много, попробуйте еще раз')
+            elif attempt < num:
+                print('Слишком мало, попробуйте еще раз')
+            else:
+                return 'Вы угадали, поздравляем!'
         else:
-            return 'Вы угадали, поздравляем!'
+            print('Вы ввели не число.в')
+            continue
 
 
 # считываем данные
