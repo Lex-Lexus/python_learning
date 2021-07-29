@@ -5,7 +5,7 @@ import random
 def main(num):
     while True:
         attempt = input('Введите число от 1 до 100: ')
-        if attempt.isdigit():
+        if is_valid(attempt):
             attempt = int(attempt)
             if attempt > num:
                 print('Слишком много, попробуйте еще раз')
@@ -14,8 +14,15 @@ def main(num):
             else:
                 return 'Вы угадали, поздравляем!'
         else:
-            print('Вы ввели не число.')
+            print('А может быть все-таки введем целое число от 1 до 100?')
             continue
+
+
+def is_valid(attempt):
+    if attempt.isdigit():
+        return 1 <= int(attempt) <= 100
+    else:
+        return False
 
 
 # считываем данные
