@@ -14,7 +14,7 @@ def main(num):
             else:
                 return 'Вы угадали, поздравляем!'
         else:
-            print('Вы ввели не число.в')
+            print('Вы ввели не число.')
             continue
 
 
@@ -22,4 +22,5 @@ def main(num):
 num = random.randint(1, 100)
 
 # вызываем функцию
+print('Добро пожаловать в числовую угадайку')
 print(main(num))
