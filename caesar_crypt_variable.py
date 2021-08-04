@@ -40,12 +40,11 @@ def decrypt(alphabet, rotate, text):
 
 # инициализация переменных
 alphabet = [[chr(i) for i in range(ord('a'), ord('z') + 1)], [chr(i) for i in range(ord('A'), ord('Z') + 1)]]
-text_new = []
+
 
 # основной код
 print('Вас приветствует шифратор и дешифратор Цезаря')
-print('')
-
+print('Каждое слово шифруется отдельно со сдвигом в длинну слова')
 print('Что будем делать?')
 type_of_work = input('1 - Зашифровать?, 0 - Расшифровать?: ')
 text = input('Введите текст: ').split()
@@ -55,7 +54,6 @@ for word in text:
         if char.isalpha():
             word_len += 1
     if type_of_work == '1':
-        text_new.append(crypt(alphabet, word_len, word))
+        print(crypt(alphabet, word_len, word), end=' ')
     elif type_of_work == '0':
-        text_new.append(decrypt(alphabet, word_len, word))
-print(*text_new)
+        print(decrypt(alphabet, word_len, word), end=' ')
